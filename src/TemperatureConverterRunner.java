@@ -4,31 +4,23 @@ public class TemperatureConverterRunner {
     public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
         TemperatureConverterObject a = new TemperatureConverterObject();
-        Scanner country = new Scanner(System.in);
-        a.setCountry(country);
-        Scanner temp = new Scanner(System.in);
-        a.setTemperature(temp);
-        a.setType();
+        a.setCountry("USA");
+        a.setTemperature(0);
+        System.out.println(a.getCountry());
         System.out.println(a.getType());
-        switch (a.getType()){
-            case "Fahrenheit": {
-                TemperatureConverter temperatureConverter = new FahrenheitConverter(a.getTemperature());
-                System.out.println(temperatureConverter.convert());
-                break;
-            }
-            case "Kelvin" :{
-                TemperatureConverter temperatureConverter = new KelvinConverter(a.getTemperature());
-                System.out.println(temperatureConverter.convert());
-                break;
-            }
-            case "Celsius" :{
-                TemperatureConverter temperatureConverter = new CelsiusConverter(a.getTemperature());
-                System.out.println(temperatureConverter.convert());
-                break;
-            }
-            default:
-                break;
-            }
+        TemperatureConverter.getNewTemp(a.getType());
+        TemperatureConverterObject b = new TemperatureConverterObject();
+        b.setCountry("Science");
+        b.setTemperature(0);
+        System.out.println(b.getCountry());
+        System.out.println(b.getType());
+        TemperatureConverter.getNewTemp(b.getType());
+        TemperatureConverterObject c = new TemperatureConverterObject();
+        c.setCountry("Russia");
+        c.setTemperature(0);
+        System.out.println(c.getCountry());
+        System.out.println(c.getType());
+        TemperatureConverter.getNewTemp(c.getType());
         }
     }
 

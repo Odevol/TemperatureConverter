@@ -10,34 +10,30 @@ public class TemperatureConverterObject {
     String kelvin[] = new String[]{"Phisics", "Science"};
     String celsius[] = new String[]{"Russia"};
 
-    public void setCountry(Scanner country) {
-        this.country = country.next();
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public void setTemperature(Scanner temperature) {
-        this.temperature = temperature.nextDouble();
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
     }
 
-    public void setType() {
+    public String getType(){
         for (String fahrenheit : fahrenheit) {
             if (this.country.equals(fahrenheit)) {
                 this.type = "Fahrenheit";
             }
         }
-            for (String kelvin : kelvin) {
-                if (this.country.equals(kelvin)) {
-                    this.type = "Kelvin";
-                }
+        for (String kelvin : kelvin) {
+            if (this.country.equals(kelvin)) {
+                this.type = "Kelvin";
             }
+        }
         for (String celsius : celsius){
             if (this.country.equals(celsius)){
                 this.type = "Celsius";
             }
         }
-        }
-
-
-    public String getType(){
         return this.type;
     }
     public String getCountry () {
