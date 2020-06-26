@@ -1,6 +1,6 @@
 public interface TemperatureConverter {
 
-    double convert();
+    double convert(double temp);
 
     static TemperatureConverter getFahrenheitInstance() {
         return new FahrenheitConverter();
@@ -14,21 +14,18 @@ public interface TemperatureConverter {
         return new CelsiusConverter();
     }
 
-    static void getNewTemp(String type) {
+    static void getNewTemp(String type, double temp) {
         switch (type) {
             case "Fahrenheit": {
-                TemperatureConverter temperatureConverter = getFahrenheitInstance();
-                System.out.println(temperatureConverter.convert());
+                System.out.println(getFahrenheitInstance().convert(temp));
                 break;
             }
             case "Kelvin": {
-                TemperatureConverter temperatureConverter = getKelvinInstance();
-                System.out.println(temperatureConverter.convert());
+                System.out.println(getKelvinInstance().convert(temp));
                 break;
             }
             case "Celsius": {
-                TemperatureConverter temperatureConverter = getCelsiusInstance();
-                System.out.println(temperatureConverter.convert());
+                System.out.println(getCelsiusInstance().convert(temp));
                 break;
             }
             default:
